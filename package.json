@@ -1,0 +1,38 @@
+{
+  "name": "se0ga_brain_games",
+  "version": "0.1.0",
+  "description": "First project on hexlet.com",
+  "main": "index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:se0ga/project-lvl1-s320.git"
+  },
+  "keywords": [
+    "hexlet",
+    "brain-games"
+  ],
+  "author": "se0ga@yandex.ru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/se0ga/project-lvl1-s320/issues"
+  },
+  "homepage": "https://github.com/se0ga/project-lvl1-s320#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
