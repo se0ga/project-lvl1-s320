@@ -2,9 +2,9 @@
   "name": "se0ga_brain_games",
   "version": "0.1.2",
   "description": "First project on hexlet.com",
-  "main": "index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
