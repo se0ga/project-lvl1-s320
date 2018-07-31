@@ -1,6 +1,6 @@
 {
   "name": "se0ga_brain_games",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "First project on hexlet.com",
   "main": "index.js",
   "bin": {
@@ -30,9 +30,13 @@
   },
   "homepage": "https://github.com/se0ga/project-lvl1-s320#readme",
   "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "readline-sync": "^1.4.9"
   }
 }
