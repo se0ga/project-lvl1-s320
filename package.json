@@ -1,6 +1,6 @@
 {
   "name": "se0ga_brain_games",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "First project on hexlet.com",
   "main": "index.js",
   "bin": {
