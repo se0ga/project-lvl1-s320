@@ -14,9 +14,7 @@ export default (description, getQuestionAndAnswer) => {
   const name = askName();
 
   for (let i = 0; i < NUMBER_OF_ATTEMPTS; i += 1) {
-    const data = getQuestionAndAnswer();
-    const question = data[0];
-    const rightAnswer = data[1];
+    const [question, rightAnswer] = getQuestionAndAnswer();
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');

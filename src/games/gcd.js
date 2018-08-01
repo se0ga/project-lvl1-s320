@@ -1,9 +1,9 @@
 import playGame from '../game';
-import rand from '../tools/rand';
+import rand from '../utils';
 
-const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
-const MIN_NUMBER = 0;
-const MAX_NUMBER = 100;
+const description = 'Find the greatest common divisor of given numbers.';
+const minNumber = 0;
+const maxNumber = 100;
 
 const gcd = (a, b) => {
   if (!b) {
@@ -14,12 +14,12 @@ const gcd = (a, b) => {
 
 export default () => {
   const getQuestionAndAnswer = () => {
-    const number1 = rand(MIN_NUMBER, MAX_NUMBER);
-    const number2 = rand(MIN_NUMBER, MAX_NUMBER);
+    const number1 = rand(minNumber, maxNumber);
+    const number2 = rand(minNumber, maxNumber);
     const question = `${number1} ${number2}`;
     const result = gcd(number1, number2);
     const answer = `${result}`;
     return [question, answer];
   };
-  playGame(DESCRIPTION, getQuestionAndAnswer);
+  playGame(description, getQuestionAndAnswer);
 };

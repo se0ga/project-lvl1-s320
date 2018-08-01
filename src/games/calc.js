@@ -1,21 +1,21 @@
 import playGame from '../game';
-import rand from '../tools/rand';
+import rand from '../utils';
 
-const DESCRIPTION = 'What is the result of the expression?';
-const MIN_NUMBER = 0;
-const MAX_NUMBER = 100;
-const OPERATIONS = ['+', '-', '*'];
+const description = 'What is the result of the expression?';
+const minNumber = 0;
+const maxNumber = 100;
+const operations = ['+', '-', '*'];
 
 const calculate = (number1, number2, operation) => {
   let result;
   switch (operation) {
-    case OPERATIONS[0]:
+    case operations[0]:
       result = number1 + number2;
       break;
-    case OPERATIONS[1]:
+    case operations[1]:
       result = number1 - number2;
       break;
-    case OPERATIONS[2]:
+    case operations[2]:
       result = number1 * number2;
       break;
     default:
@@ -26,13 +26,13 @@ const calculate = (number1, number2, operation) => {
 
 export default () => {
   const getQuestionAndAnswer = () => {
-    const number1 = rand(MIN_NUMBER, MAX_NUMBER);
-    const number2 = rand(MIN_NUMBER, MAX_NUMBER);
-    const operation = OPERATIONS[rand(0, OPERATIONS.length - 1)];
+    const number1 = rand(minNumber, maxNumber);
+    const number2 = rand(minNumber, maxNumber);
+    const operation = operations[rand(0, operations.length - 1)];
     const question = `${number1} ${operation} ${number2}`;
     const result = calculate(number1, number2, operation);
     const answer = `${result}`;
     return [question, answer];
   };
-  playGame(DESCRIPTION, getQuestionAndAnswer);
+  playGame(description, getQuestionAndAnswer);
 };
