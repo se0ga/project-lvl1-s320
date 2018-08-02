@@ -12,14 +12,15 @@ const gcd = (a, b) => {
   return gcd(b, a % b);
 };
 
+const getQuestionAndAnswer = () => {
+  const number1 = rand(minNumber, maxNumber);
+  const number2 = rand(minNumber, maxNumber);
+  const question = `${number1} ${number2}`;
+  const result = gcd(number1, number2);
+  const answer = `${result}`;
+  return [question, answer];
+};
+
 export default () => {
-  const getQuestionAndAnswer = () => {
-    const number1 = rand(minNumber, maxNumber);
-    const number2 = rand(minNumber, maxNumber);
-    const question = `${number1} ${number2}`;
-    const result = gcd(number1, number2);
-    const answer = `${result}`;
-    return [question, answer];
-  };
   playGame(description, getQuestionAndAnswer);
 };

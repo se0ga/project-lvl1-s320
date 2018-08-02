@@ -24,15 +24,16 @@ const calculate = (number1, number2, operation) => {
   return result;
 };
 
+const getQuestionAndAnswer = () => {
+  const number1 = rand(minNumber, maxNumber);
+  const number2 = rand(minNumber, maxNumber);
+  const operation = operations[rand(0, operations.length - 1)];
+  const question = `${number1} ${operation} ${number2}`;
+  const result = calculate(number1, number2, operation);
+  const answer = `${result}`;
+  return [question, answer];
+};
+
 export default () => {
-  const getQuestionAndAnswer = () => {
-    const number1 = rand(minNumber, maxNumber);
-    const number2 = rand(minNumber, maxNumber);
-    const operation = operations[rand(0, operations.length - 1)];
-    const question = `${number1} ${operation} ${number2}`;
-    const result = calculate(number1, number2, operation);
-    const answer = `${result}`;
-    return [question, answer];
-  };
   playGame(description, getQuestionAndAnswer);
 };

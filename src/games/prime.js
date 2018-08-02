@@ -17,13 +17,14 @@ const isPrime = (number) => {
   return true;
 };
 
+const getQuestionAndAnswer = () => {
+  const number = rand(minNumber, maxNumber);
+  const question = `${number}`;
+  const result = isPrime(number);
+  const answer = result ? 'yes' : 'no';
+  return [question, answer];
+};
+
 export default () => {
-  const getQuestionAndAnswer = () => {
-    const number = rand(minNumber, maxNumber);
-    const question = `${number}`;
-    const result = isPrime(number);
-    const answer = result ? 'yes' : 'no';
-    return [question, answer];
-  };
   playGame(description, getQuestionAndAnswer);
 };

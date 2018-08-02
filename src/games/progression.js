@@ -16,16 +16,17 @@ const makeProgression = (start, length, step) => {
   return result;
 };
 
+const getQuestionAndAnswer = () => {
+  const start = rand(minStartNumber, maxStartNumber);
+  const step = rand(minStepNumber, maxStepNumber);
+  const progression = makeProgression(start, progressionLength, step);
+  const index = rand(0, progressionLength - 1);
+  const answer = `${progression[index]}`;
+  progression[index] = '..';
+  const question = progression.join(' ');
+  return [question, answer];
+};
+
 export default () => {
-  const getQuestionAndAnswer = () => {
-    const start = rand(minStartNumber, maxStartNumber);
-    const step = rand(minStepNumber, maxStepNumber);
-    const progression = makeProgression(start, progressionLength, step);
-    const index = rand(0, progressionLength - 1);
-    const answer = `${progression[index]}`;
-    progression[index] = '..';
-    const question = progression.join(' ');
-    return [question, answer];
-  };
   playGame(description, getQuestionAndAnswer);
 };

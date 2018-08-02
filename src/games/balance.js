@@ -22,12 +22,13 @@ const getBalance = (number) => {
   return result.join('');
 };
 
+const getQuestionAndAnswer = () => {
+  const number = rand(minNumber, maxNumber);
+  const question = `${number}`;
+  const answer = getBalance(number);
+  return [question, answer];
+};
+
 export default () => {
-  const getQuestionAndAnswer = () => {
-    const number = rand(minNumber, maxNumber);
-    const question = `${number}`;
-    const answer = getBalance(number);
-    return [question, answer];
-  };
   playGame(description, getQuestionAndAnswer);
 };
